@@ -1,0 +1,50 @@
+{
+    "name": "cgsmith/yii2-user",
+    "description": "Modern user management module for Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "user", "authentication", "authorization", "rbac", "gdpr"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Smith",
+            "email": "cgsmith105@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/cgsmith/yii2-user/issues",
+        "source": "https://github.com/cgsmith/yii2-user"
+    },
+    "require": {
+        "php": ">=8.2",
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^1.10"
+    },
+    "autoload": {
+        "psr-4": {
+            "cgsmith\\user\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "cgsmith\\user\\tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "bootstrap": "cgsmith\\user\\Bootstrap"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    }
+}
