@@ -102,6 +102,18 @@ class Bootstrap implements BootstrapInterface
             return new \cgsmith\user\services\MailerService($module);
         });
 
+        $container->setSingleton('cgsmith\user\services\SessionService', function () use ($module) {
+            return new \cgsmith\user\services\SessionService($module);
+        });
+
+        $container->setSingleton('cgsmith\user\services\GdprService', function () use ($module) {
+            return new \cgsmith\user\services\GdprService($module);
+        });
+
+        $container->setSingleton('cgsmith\user\services\CaptchaService', function () use ($module) {
+            return new \cgsmith\user\services\CaptchaService($module);
+        });
+
         // Bind module for injection
         $container->setSingleton(Module::class, function () use ($module) {
             return $module;
@@ -131,6 +143,9 @@ class Bootstrap implements BootstrapInterface
             'settings' => 'settings/account',
             'settings/account' => 'settings/account',
             'settings/profile' => 'settings/profile',
+            'settings/sessions' => 'settings/sessions',
+            'settings/sessions/terminate/<id:\d+>' => 'settings/terminate-session',
+            'settings/sessions/terminate-all' => 'settings/terminate-all-sessions',
 
             // Admin
             'admin' => 'admin/index',
@@ -149,6 +164,10 @@ class Bootstrap implements BootstrapInterface
             $rules['gdpr'] = 'gdpr/index';
             $rules['gdpr/export'] = 'gdpr/export';
             $rules['gdpr/delete'] = 'gdpr/delete';
+        }
+
+        if ($module->enableGdprConsent) {
+            $rules['gdpr/consent'] = 'gdpr/consent';
         }
 
         return $rules;

@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace cgsmith\user\models;
 
 use cgsmith\user\Module;
+use cgsmith\user\services\CaptchaService;
+use cgsmith\user\validators\HCaptchaValidator;
+use cgsmith\user\validators\ReCaptchaValidator;
 use Yii;
 use yii\base\Model;
 
@@ -16,6 +19,7 @@ class LoginForm extends Model
     public ?string $login = null;
     public ?string $password = null;
     public bool $rememberMe = false;
+    public ?string $captcha = null;
 
     private ?User $_user = null;
 
@@ -24,13 +28,35 @@ class LoginForm extends Model
      */
     public function rules(): array
     {
-        return [
+        $module = $this->getModule();
+
+        $rules = [
             [['login', 'password'], 'required'],
             [['login'], 'string'],
             [['password'], 'string'],
             [['rememberMe'], 'boolean'],
             [['password'], 'validatePassword'],
+            [['captcha'], 'safe'],
         ];
+
+        if ($module->enableCaptcha && in_array('login', $module->captchaForms, true)) {
+            $rules[] = $this->getCaptchaRule($module);
+        }
+
+        return $rules;
+    }
+
+    /**
+     * Get CAPTCHA validation rule based on type.
+     */
+    protected function getCaptchaRule(Module $module): array
+    {
+        return match ($module->captchaType) {
+            CaptchaService::TYPE_YII => ['captcha', 'captcha', 'captchaAction' => '/user/security/captcha'],
+            CaptchaService::TYPE_RECAPTCHA_V2, CaptchaService::TYPE_RECAPTCHA_V3 => ['captcha', ReCaptchaValidator::class],
+            CaptchaService::TYPE_HCAPTCHA => ['captcha', HCaptchaValidator::class],
+            default => ['captcha', 'safe'],
+        };
     }
 
     /**

@@ -10,6 +10,7 @@ use cgsmith\user\models\Token;
 use cgsmith\user\models\User;
 use cgsmith\user\Module;
 use cgsmith\user\services\MailerService;
+use cgsmith\user\services\SessionService;
 use cgsmith\user\services\TokenService;
 use Yii;
 use yii\filters\AccessControl;
@@ -39,6 +40,8 @@ class SettingsController extends Controller
                 'class' => VerbFilter::class,
                 'actions' => [
                     'delete-avatar' => ['post'],
+                    'terminate-session' => ['post'],
+                    'terminate-all-sessions' => ['post'],
                 ],
             ],
         ];
@@ -229,5 +232,81 @@ class SettingsController extends Controller
         }
 
         return $this->redirect(['account']);
+    }
+
+    /**
+     * Display active sessions.
+     */
+    public function actionSessions(): Response|string
+    {
+        /** @var Module $module */
+        $module = $this->module;
+
+        if (!$module->enableSessionHistory) {
+            return $this->redirect(['account']);
+        }
+
+        /** @var User $user */
+        $user = Yii::$app->user->identity;
+
+        /** @var SessionService $sessionService */
+        $sessionService = Yii::$container->get(SessionService::class);
+        $sessions = $sessionService->getUserSessions($user);
+
+        return $this->render('sessions', [
+            'sessions' => $sessions,
+            'module' => $module,
+        ]);
+    }
+
+    /**
+     * Terminate a specific session.
+     */
+    public function actionTerminateSession(int $id): Response
+    {
+        /** @var Module $module */
+        $module = $this->module;
+
+        if (!$module->enableSessionHistory) {
+            return $this->redirect(['account']);
+        }
+
+        /** @var User $user */
+        $user = Yii::$app->user->identity;
+
+        /** @var SessionService $sessionService */
+        $sessionService = Yii::$container->get(SessionService::class);
+
+        if ($sessionService->terminateSession($id, $user)) {
+            Yii::$app->session->setFlash('success', Yii::t('user', 'Session has been terminated.'));
+        } else {
+            Yii::$app->session->setFlash('danger', Yii::t('user', 'Session not found.'));
+        }
+
+        return $this->redirect(['sessions']);
+    }
+
+    /**
+     * Terminate all sessions except the current one.
+     */
+    public function actionTerminateAllSessions(): Response
+    {
+        /** @var Module $module */
+        $module = $this->module;
+
+        if (!$module->enableSessionHistory) {
+            return $this->redirect(['account']);
+        }
+
+        /** @var User $user */
+        $user = Yii::$app->user->identity;
+
+        /** @var SessionService $sessionService */
+        $sessionService = Yii::$container->get(SessionService::class);
+        $count = $sessionService->terminateOtherSessions($user);
+
+        Yii::$app->session->setFlash('success', Yii::t('user', '{count, plural, =0{No sessions} =1{1 session} other{# sessions}} terminated.', ['count' => $count]));
+
+        return $this->redirect(['sessions']);
     }
 }

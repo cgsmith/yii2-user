@@ -6,7 +6,9 @@ namespace cgsmith\user\controllers;
 
 use cgsmith\user\events\FormEvent;
 use cgsmith\user\models\LoginForm;
+use cgsmith\user\models\User;
 use cgsmith\user\Module;
+use cgsmith\user\services\SessionService;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -70,6 +72,13 @@ class SecurityController extends Controller
         $module->trigger(self::EVENT_BEFORE_LOGIN, $event);
 
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            // Track session
+            if ($module->enableSessionHistory) {
+                /** @var SessionService $sessionService */
+                $sessionService = Yii::$container->get(SessionService::class);
+                $sessionService->trackSession(Yii::$app->user->identity);
+            }
+
             // Trigger after login event
             $event = new FormEvent(['form' => $model]);
             $module->trigger(self::EVENT_AFTER_LOGIN, $event);
@@ -91,9 +100,19 @@ class SecurityController extends Controller
         /** @var Module $module */
         $module = $this->module;
 
+        /** @var User|null $user */
+        $user = Yii::$app->user->identity;
+
         // Trigger before logout event
         $event = new FormEvent(['form' => null]);
         $module->trigger(self::EVENT_BEFORE_LOGOUT, $event);
+
+        // Remove session tracking
+        if ($module->enableSessionHistory && $user !== null) {
+            /** @var SessionService $sessionService */
+            $sessionService = Yii::$container->get(SessionService::class);
+            $sessionService->removeCurrentSession($user);
+        }
 
         Yii::$app->user->logout();
 

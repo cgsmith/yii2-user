@@ -33,6 +33,8 @@ use yii\web\IdentityInterface;
  * @property string $created_at
  * @property string $updated_at
  * @property string|null $gdpr_consent_at
+ * @property string|null $gdpr_consent_version
+ * @property string|null $gdpr_marketing_consent_at
  * @property string|null $gdpr_deleted_at
  *
  * @property-read bool $isAdmin
@@ -40,6 +42,7 @@ use yii\web\IdentityInterface;
  * @property-read bool $isConfirmed
  * @property-read Profile $profile
  * @property-read Token[] $tokens
+ * @property-read Session[] $sessions
  */
 class User extends ActiveRecord implements IdentityInterface, UserInterface
 {
@@ -260,6 +263,14 @@ class User extends ActiveRecord implements IdentityInterface, UserInterface
     public function getTokens(): ActiveQuery
     {
         return $this->hasMany(Token::class, ['user_id' => 'id']);
+    }
+
+    /**
+     * Get user sessions relation.
+     */
+    public function getSessions(): ActiveQuery
+    {
+        return $this->hasMany(Session::class, ['user_id' => 'id']);
     }
 
     // Helper methods

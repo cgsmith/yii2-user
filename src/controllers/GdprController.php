@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace cgsmith\user\controllers;
 
+use cgsmith\user\models\GdprConsentForm;
 use cgsmith\user\models\User;
 use cgsmith\user\Module;
+use cgsmith\user\services\GdprService;
 use Yii;
 use yii\db\Expression;
 use yii\filters\AccessControl;
@@ -48,11 +50,53 @@ class GdprController extends Controller
         /** @var Module $module */
         $module = $this->module;
 
-        if (!$module->enableGdpr) {
+        if ($action->id === 'consent') {
+            if (!$module->enableGdprConsent) {
+                throw new NotFoundHttpException();
+            }
+        } elseif (!$module->enableGdpr) {
             throw new NotFoundHttpException();
         }
 
         return parent::beforeAction($action);
+    }
+
+    /**
+     * GDPR consent page.
+     */
+    public function actionConsent(): Response|string
+    {
+        /** @var Module $module */
+        $module = $this->module;
+
+        if (!$module->enableGdprConsent) {
+            return $this->redirect(['/']);
+        }
+
+        /** @var User $user */
+        $user = Yii::$app->user->identity;
+
+        /** @var GdprService $gdprService */
+        $gdprService = Yii::$container->get(GdprService::class);
+
+        if ($gdprService->hasValidConsent($user)) {
+            return $this->redirect(['/']);
+        }
+
+        $model = new GdprConsentForm();
+
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($gdprService->recordConsent($user, $model->marketingConsent)) {
+                Yii::$app->session->setFlash('success', Yii::t('user', 'Thank you for your consent.'));
+                return $this->goHome();
+            }
+            Yii::$app->session->setFlash('danger', Yii::t('user', 'An error occurred while recording your consent.'));
+        }
+
+        return $this->render('consent', [
+            'model' => $model,
+            'module' => $module,
+        ]);
     }
 
     /**
