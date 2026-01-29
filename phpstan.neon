@@ -1,0 +1,19 @@
+parameters:
+    level: 6
+    paths:
+        - src
+    excludePaths:
+        - src/migrations
+
+    ignoreErrors:
+        - '#Call to an undefined method yii\\web\\IdentityInterface::#'
+        - '#Call to an undefined method yii\\base\\Component::get[A-Za-z]+\(\)#'
+
+    treatPhpDocTypesAsCertain: false
+    reportUnmatchedIgnoredErrors: false
+
+    yii2:
+        config_path: null
+
+includes:
+    - vendor/phpstan/phpstan/conf/bleedingEdge.neon

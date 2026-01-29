@@ -43,6 +43,8 @@ use yii\web\IdentityInterface;
  * @property-read Profile $profile
  * @property-read Token[] $tokens
  * @property-read Session[] $sessions
+ * @property-read TwoFactor|null $twoFactor
+ * @property-read SocialAccount[] $socialAccounts
  */
 class User extends ActiveRecord implements IdentityInterface, UserInterface
 {
@@ -271,6 +273,22 @@ class User extends ActiveRecord implements IdentityInterface, UserInterface
     public function getSessions(): ActiveQuery
     {
         return $this->hasMany(Session::class, ['user_id' => 'id']);
+    }
+
+    /**
+     * Get user two-factor authentication relation.
+     */
+    public function getTwoFactor(): ActiveQuery
+    {
+        return $this->hasOne(TwoFactor::class, ['user_id' => 'id']);
+    }
+
+    /**
+     * Get user social accounts relation.
+     */
+    public function getSocialAccounts(): ActiveQuery
+    {
+        return $this->hasMany(SocialAccount::class, ['user_id' => 'id']);
     }
 
     // Helper methods

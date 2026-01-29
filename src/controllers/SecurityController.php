@@ -9,6 +9,7 @@ use cgsmith\user\models\LoginForm;
 use cgsmith\user\models\User;
 use cgsmith\user\Module;
 use cgsmith\user\services\SessionService;
+use cgsmith\user\services\TwoFactorService;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
@@ -71,19 +72,31 @@ class SecurityController extends Controller
         $event = new FormEvent(['form' => $model]);
         $module->trigger(self::EVENT_BEFORE_LOGIN, $event);
 
-        if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            // Track session
-            if ($module->enableSessionHistory) {
-                /** @var SessionService $sessionService */
-                $sessionService = Yii::$container->get(SessionService::class);
-                $sessionService->trackSession(Yii::$app->user->identity);
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $user = $model->getUser();
+
+            if ($module->enableTwoFactor && $user !== null) {
+                /** @var TwoFactorService $twoFactorService */
+                $twoFactorService = Yii::$container->get(TwoFactorService::class);
+
+                if ($twoFactorService->isEnabled($user)) {
+                    $twoFactorService->storePending2FAUser($user->id, $model->rememberMe);
+                    return $this->redirect(['/' . $module->urlPrefix . '/two-factor']);
+                }
             }
 
-            // Trigger after login event
-            $event = new FormEvent(['form' => $model]);
-            $module->trigger(self::EVENT_AFTER_LOGIN, $event);
+            if ($model->login()) {
+                if ($module->enableSessionHistory) {
+                    /** @var SessionService $sessionService */
+                    $sessionService = Yii::$container->get(SessionService::class);
+                    $sessionService->trackSession(Yii::$app->user->identity);
+                }
 
-            return $this->goBack();
+                $event = new FormEvent(['form' => $model]);
+                $module->trigger(self::EVENT_AFTER_LOGIN, $event);
+
+                return $this->goBack();
+            }
         }
 
         return $this->render('login', [

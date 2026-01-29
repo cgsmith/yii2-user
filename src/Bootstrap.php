@@ -114,6 +114,14 @@ class Bootstrap implements BootstrapInterface
             return new \cgsmith\user\services\CaptchaService($module);
         });
 
+        $container->setSingleton('cgsmith\user\services\TwoFactorService', function () use ($module) {
+            return new \cgsmith\user\services\TwoFactorService($module);
+        });
+
+        $container->setSingleton('cgsmith\user\services\SocialAuthService', function () use ($module) {
+            return new \cgsmith\user\services\SocialAuthService($module);
+        });
+
         // Bind module for injection
         $container->setSingleton(Module::class, function () use ($module) {
             return $module;
@@ -168,6 +176,21 @@ class Bootstrap implements BootstrapInterface
 
         if ($module->enableGdprConsent) {
             $rules['gdpr/consent'] = 'gdpr/consent';
+        }
+
+        if ($module->enableTwoFactor) {
+            $rules['two-factor'] = 'two-factor/verify';
+            $rules['settings/two-factor'] = 'two-factor/index';
+            $rules['settings/two-factor/enable'] = 'two-factor/enable';
+            $rules['settings/two-factor/disable'] = 'two-factor/disable';
+            $rules['settings/two-factor/backup-codes'] = 'two-factor/backup-codes';
+            $rules['settings/two-factor/regenerate-backup-codes'] = 'two-factor/regenerate-backup-codes';
+        }
+
+        if ($module->enableSocialAuth) {
+            $rules['auth/<authclient:[\w\-]+>'] = 'social/auth';
+            $rules['settings/networks'] = 'social/networks';
+            $rules['settings/networks/disconnect/<id:\d+>'] = 'social/disconnect';
         }
 
         return $rules;

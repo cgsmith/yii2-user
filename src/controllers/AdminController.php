@@ -5,11 +5,13 @@ declare(strict_types=1);
 namespace cgsmith\user\controllers;
 
 use cgsmith\user\filters\AccessRule;
+use cgsmith\user\models\AssignmentForm;
 use cgsmith\user\models\User;
 use cgsmith\user\models\UserSearch;
 use cgsmith\user\Module;
-use cgsmith\user\services\RegistrationService;
 use cgsmith\user\services\MailerService;
+use cgsmith\user\services\RbacService;
+use cgsmith\user\services\RegistrationService;
 use cgsmith\user\services\UserService;
 use Yii;
 use yii\filters\AccessControl;
@@ -338,6 +340,49 @@ class AdminController extends Controller
         }
 
         return $this->redirect(['index']);
+    }
+
+    /**
+     * Manage user role assignments.
+     */
+    public function actionAssignments(int $id): string
+    {
+        /** @var Module $module */
+        $module = $this->module;
+
+        /** @var RbacService $rbacService */
+        $rbacService = Yii::$container->get(RbacService::class);
+
+        $user = $this->findUser($id);
+
+        $model = new AssignmentForm();
+        $model->loadAssignments($user->id);
+
+        return $this->render('_assignments', [
+            'user' => $user,
+            'model' => $model,
+            'roles' => $rbacService->getRoles(),
+            'module' => $module,
+        ]);
+    }
+
+    /**
+     * Update user role assignments.
+     */
+    public function actionUpdateAssignments(int $id): Response
+    {
+        $user = $this->findUser($id);
+
+        $model = new AssignmentForm();
+        $model->userId = $user->id;
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', Yii::t('user', 'Role assignments have been updated.'));
+        } else {
+            Yii::$app->session->setFlash('danger', Yii::t('user', 'Failed to update role assignments.'));
+        }
+
+        return $this->redirect(['assignments', 'id' => $id]);
     }
 
     /**

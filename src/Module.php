@@ -173,6 +173,52 @@ class Module extends BaseModule implements BootstrapInterface
     public array $captchaForms = ['register'];
 
     /**
+     * Whether to enable two-factor authentication.
+     */
+    public bool $enableTwoFactor = false;
+
+    /**
+     * Issuer name for TOTP (shown in authenticator app).
+     */
+    public string $twoFactorIssuer = '';
+
+    /**
+     * Number of backup codes to generate.
+     */
+    public int $twoFactorBackupCodesCount = 10;
+
+    /**
+     * Whether to require 2FA for admin users.
+     */
+    public bool $twoFactorRequireForAdmins = false;
+
+    /**
+     * Whether to enable social network authentication.
+     */
+    public bool $enableSocialAuth = false;
+
+    /**
+     * Whether to allow registration via social networks.
+     */
+    public bool $enableSocialRegistration = true;
+
+    /**
+     * Whether to allow connecting social accounts in settings.
+     */
+    public bool $enableSocialConnect = true;
+
+    /**
+     * Whether to enable RBAC management UI.
+     */
+    public bool $enableRbacManagement = false;
+
+    /**
+     * RBAC permission name required to access RBAC management.
+     * If null, only admins can access RBAC management.
+     */
+    public ?string $rbacManagementPermission = null;
+
+    /**
      * Email change strategy.
      */
     public int $emailChangeStrategy = self::EMAIL_CHANGE_DEFAULT;
@@ -426,6 +472,18 @@ class Module extends BaseModule implements BootstrapInterface
             return new \cgsmith\user\services\CaptchaService($this);
         });
 
+        $container->setSingleton('cgsmith\user\services\TwoFactorService', function () {
+            return new \cgsmith\user\services\TwoFactorService($this);
+        });
+
+        $container->setSingleton('cgsmith\user\services\SocialAuthService', function () {
+            return new \cgsmith\user\services\SocialAuthService($this);
+        });
+
+        $container->setSingleton('cgsmith\user\services\RbacService', function () {
+            return new \cgsmith\user\services\RbacService($this);
+        });
+
         $container->setSingleton(Module::class, function () {
             return $this;
         });
@@ -459,6 +517,7 @@ class Module extends BaseModule implements BootstrapInterface
             'admin/unblock/<id:\d+>' => 'admin/unblock',
             'admin/confirm/<id:\d+>' => 'admin/confirm',
             'admin/impersonate/<id:\d+>' => 'admin/impersonate',
+            'admin/assignments/<id:\d+>' => 'admin/assignments',
         ];
 
         if ($this->enableGdpr) {
@@ -469,6 +528,33 @@ class Module extends BaseModule implements BootstrapInterface
 
         if ($this->enableGdprConsent) {
             $rules['gdpr/consent'] = 'gdpr/consent';
+        }
+
+        if ($this->enableTwoFactor) {
+            $rules['two-factor'] = 'two-factor/verify';
+            $rules['settings/two-factor'] = 'two-factor/index';
+            $rules['settings/two-factor/enable'] = 'two-factor/enable';
+            $rules['settings/two-factor/disable'] = 'two-factor/disable';
+            $rules['settings/two-factor/backup-codes'] = 'two-factor/backup-codes';
+            $rules['settings/two-factor/regenerate-backup-codes'] = 'two-factor/regenerate-backup-codes';
+        }
+
+        if ($this->enableSocialAuth) {
+            $rules['auth/<authclient:[\w\-]+>'] = 'social/auth';
+            $rules['settings/networks'] = 'social/networks';
+            $rules['settings/networks/disconnect/<id:\d+>'] = 'social/disconnect';
+        }
+
+        if ($this->enableRbacManagement) {
+            $rules['rbac'] = 'rbac/index';
+            $rules['rbac/roles'] = 'rbac/roles';
+            $rules['rbac/roles/create'] = 'rbac/create-role';
+            $rules['rbac/roles/update/<name:[\w\-]+>'] = 'rbac/update-role';
+            $rules['rbac/roles/delete/<name:[\w\-]+>'] = 'rbac/delete-role';
+            $rules['rbac/permissions'] = 'rbac/permissions';
+            $rules['rbac/permissions/create'] = 'rbac/create-permission';
+            $rules['rbac/permissions/update/<name:[\w\-\.]+>'] = 'rbac/update-permission';
+            $rules['rbac/permissions/delete/<name:[\w\-\.]+>'] = 'rbac/delete-permission';
         }
 
         return $rules;
