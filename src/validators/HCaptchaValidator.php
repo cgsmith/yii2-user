@@ -13,13 +13,17 @@ use yii\validators\Validator;
  */
 class HCaptchaValidator extends Validator
 {
-    public bool $skipOnEmpty = false;
+    public $skipOnEmpty = false;
 
     /**
      * {@inheritdoc}
      */
     protected function validateValue($value): ?array
     {
+        if (empty($value)) {
+            $value = Yii::$app->request->post('h-captcha-response');
+        }
+
         if (empty($value)) {
             return [Yii::t('user', 'Please complete the CAPTCHA verification.'), []];
         }

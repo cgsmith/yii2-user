@@ -13,7 +13,8 @@ use yii\validators\Validator;
  */
 class ReCaptchaValidator extends Validator
 {
-    public bool $skipOnEmpty = false;
+    /** @var bool */
+    public $skipOnEmpty = false;
 
     /**
      * {@inheritdoc}

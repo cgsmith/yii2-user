@@ -1,0 +1,1371 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 1
+			path: src/Bootstrap.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\Bootstrap\\:\\:bootstrapWeb\\(\\) has parameter \\$app with generic class yii\\\\web\\\\Application but does not specify its types\\: TUserIdentity$#"
+			count: 1
+			path: src/Bootstrap.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\Bootstrap\\:\\:getUrlRules\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Bootstrap.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 5
+			path: src/Module.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Call to static method createObject\\(\\) on an unknown class Yii\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\Module\\:\\:bootstrapWeb\\(\\) has parameter \\$app with generic class yii\\\\web\\\\Application but does not specify its types\\: TUserIdentity$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\Module\\:\\:configureUserComponent\\(\\) has parameter \\$app with generic class yii\\\\web\\\\Application but does not specify its types\\: TUserIdentity$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\Module\\:\\:createModel\\(\\) has parameter \\$config with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\Module\\:\\:getMailerSender\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\Module\\:\\:getUrlRules\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\Module\\:\\:\\$admins type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\Module\\:\\:\\$avatarExtensions type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\Module\\:\\:\\$captchaForms type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\Module\\:\\:\\$defaultModelMap type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\Module\\:\\:\\$formFieldConfig type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\Module\\:\\:\\$gdprExemptRoutes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\Module\\:\\:\\$mailer type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\Module\\:\\:\\$modelMap type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Template type T of method cgsmith\\\\user\\\\Module\\:\\:createModel\\(\\) is not referenced in a parameter\\.$#"
+			count: 1
+			path: src/Module.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/commands/MigrateFromDektriumController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\commands\\\\MigrateFromDektriumController extends generic class yii\\\\console\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/commands/MigrateFromDektriumController.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\commands\\\\MigrateFromDektriumController\\:\\:checkDektriumTables\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/commands/MigrateFromDektriumController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\commands\\\\UserController extends generic class yii\\\\console\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/commands/UserController.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 7
+			path: src/components/BackendUser.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\components\\\\BackendUser extends generic class yii\\\\web\\\\User but does not specify its types\\: T$#"
+			count: 1
+			path: src/components/BackendUser.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\components\\\\BackendUser\\:\\:getReturnUrl\\(\\) has parameter \\$defaultUrl with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/components/BackendUser.php
+
+		-
+			message: "#^PHPDoc type string of property cgsmith\\\\user\\\\components\\\\BackendUser\\:\\:\\$identityCookie is not covariant with PHPDoc type array of overridden property yii\\\\web\\\\User\\<yii\\\\web\\\\IdentityInterface\\>\\:\\:\\$identityCookie\\.$#"
+			count: 1
+			path: src/components/BackendUser.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\components\\\\BackendUser\\:\\:\\$identityCookie \\(string\\) does not accept default value of type array\\<string, string\\|true\\>\\.$#"
+			count: 1
+			path: src/components/BackendUser.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 32
+			path: src/controllers/AdminController.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 9
+			path: src/controllers/AdminController.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 21
+			path: src/controllers/AdminController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\controllers\\\\AdminController extends generic class yii\\\\web\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/controllers/AdminController.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 13
+			path: src/controllers/GdprController.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 1
+			path: src/controllers/GdprController.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 8
+			path: src/controllers/GdprController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\controllers\\\\GdprController extends generic class yii\\\\web\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/controllers/GdprController.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\User\\:\\:\\$gdpr_deleted_at \\(string\\|null\\) does not accept yii\\\\db\\\\Expression\\.$#"
+			count: 1
+			path: src/controllers/GdprController.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 13
+			path: src/controllers/RbacController.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 8
+			path: src/controllers/RbacController.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 11
+			path: src/controllers/RbacController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\controllers\\\\RbacController extends generic class yii\\\\web\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/controllers/RbacController.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 6
+			path: src/controllers/RecoveryController.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 2
+			path: src/controllers/RecoveryController.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 7
+			path: src/controllers/RecoveryController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\controllers\\\\RecoveryController extends generic class yii\\\\web\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/controllers/RecoveryController.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 11
+			path: src/controllers/RegistrationController.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 3
+			path: src/controllers/RegistrationController.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 8
+			path: src/controllers/RegistrationController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\controllers\\\\RegistrationController extends generic class yii\\\\web\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/controllers/RegistrationController.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 7
+			path: src/controllers/SecurityController.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 3
+			path: src/controllers/SecurityController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\controllers\\\\SecurityController extends generic class yii\\\\web\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/controllers/SecurityController.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 24
+			path: src/controllers/SettingsController.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 6
+			path: src/controllers/SettingsController.php
+
+		-
+			message: "#^Call to static method error\\(\\) on an unknown class Yii\\.$#"
+			count: 1
+			path: src/controllers/SettingsController.php
+
+		-
+			message: "#^Call to static method getAlias\\(\\) on an unknown class Yii\\.$#"
+			count: 2
+			path: src/controllers/SettingsController.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 14
+			path: src/controllers/SettingsController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\controllers\\\\SettingsController extends generic class yii\\\\web\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/controllers/SettingsController.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 5
+			path: src/controllers/SocialController.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 4
+			path: src/controllers/SocialController.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 3
+			path: src/controllers/SocialController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\controllers\\\\SocialController extends generic class yii\\\\web\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/controllers/SocialController.php
+
+		-
+			message: "#^Class yii\\\\authclient\\\\AuthAction not found\\.$#"
+			count: 1
+			path: src/controllers/SocialController.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\controllers\\\\SocialController\\:\\:actionNetworks\\(\\) should return string but returns yii\\\\web\\\\Response\\.$#"
+			count: 1
+			path: src/controllers/SocialController.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\controllers\\\\SocialController\\:\\:onAuthSuccess\\(\\) has parameter \\$client with no type specified\\.$#"
+			count: 1
+			path: src/controllers/SocialController.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 17
+			path: src/controllers/TwoFactorController.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 7
+			path: src/controllers/TwoFactorController.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 7
+			path: src/controllers/TwoFactorController.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\controllers\\\\TwoFactorController extends generic class yii\\\\web\\\\Controller but does not specify its types\\: T$#"
+			count: 1
+			path: src/controllers/TwoFactorController.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\events\\\\SocialAuthEvent\\:\\:\\$client has unknown class yii\\\\authclient\\\\ClientInterface as its type\\.$#"
+			count: 1
+			path: src/events/SocialAuthEvent.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 5
+			path: src/filters/BackendAccessControl.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\filters\\\\BackendAccessControl extends generic class yii\\\\filters\\\\AccessControl but does not specify its types\\: T$#"
+			count: 1
+			path: src/filters/BackendAccessControl.php
+
+		-
+			message: "#^PHPDoc type string\\|yii\\\\web\\\\User\\|null of property cgsmith\\\\user\\\\filters\\\\BackendAccessControl\\:\\:\\$user is not covariant with PHPDoc type array\\|string\\|yii\\\\web\\\\User\\<yii\\\\web\\\\IdentityInterface\\>\\|false of overridden property yii\\\\filters\\\\AccessControl\\<yii\\\\base\\\\Component\\>\\:\\:\\$user\\.$#"
+			count: 1
+			path: src/filters/BackendAccessControl.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\filters\\\\BackendAccessControl\\:\\:\\$user with generic class yii\\\\web\\\\User does not specify its types\\: T$#"
+			count: 1
+			path: src/filters/BackendAccessControl.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 6
+			path: src/filters/GdprConsentFilter.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 1
+			path: src/filters/GdprConsentFilter.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\filters\\\\GdprConsentFilter extends generic class yii\\\\base\\\\ActionFilter but does not specify its types\\: T$#"
+			count: 1
+			path: src/filters/GdprConsentFilter.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 2
+			path: src/helpers/Password.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 5
+			path: src/helpers/Password.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\helpers\\\\Password\\:\\:checkStrength\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/helpers/Password.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 2
+			path: src/models/AssignmentForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 2
+			path: src/models/AssignmentForm.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\AssignmentForm\\:\\:\\$roles type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/AssignmentForm.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/models/GdprConsentForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 3
+			path: src/models/GdprConsentForm.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 2
+			path: src/models/LoginForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 7
+			path: src/models/LoginForm.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\LoginForm\\:\\:getCaptchaRule\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/LoginForm.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 3
+			path: src/models/PermissionForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 4
+			path: src/models/PermissionForm.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/models/Profile.php
+
+		-
+			message: "#^Call to static method getAlias\\(\\) on an unknown class Yii\\.$#"
+			count: 1
+			path: src/models/Profile.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 10
+			path: src/models/Profile.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\Profile\\:\\:getTimezoneList\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/Profile.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\Profile\\:\\:getUser\\(\\) return type with generic class yii\\\\db\\\\ActiveQuery does not specify its types\\: T$#"
+			count: 1
+			path: src/models/Profile.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/models/RecoveryForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 2
+			path: src/models/RecoveryForm.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\RecoveryForm\\:\\:getCaptchaRule\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/RecoveryForm.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/models/RecoveryResetForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 3
+			path: src/models/RecoveryResetForm.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/models/RegistrationForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 9
+			path: src/models/RegistrationForm.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\RegistrationForm\\:\\:getCaptchaRule\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/RegistrationForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 1
+			path: src/models/ResendForm.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 3
+			path: src/models/RoleForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 6
+			path: src/models/RoleForm.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\RoleForm\\:\\:\\$childRoles type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/RoleForm.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\RoleForm\\:\\:\\$permissions type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/RoleForm.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/models/Session.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 9
+			path: src/models/Session.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\Session\\:\\:getUser\\(\\) return type with generic class yii\\\\db\\\\ActiveQuery does not specify its types\\: T$#"
+			count: 1
+			path: src/models/Session.php
+
+		-
+			message: "#^Negated boolean expression is always true\\.$#"
+			count: 1
+			path: src/models/Session.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/models/SettingsForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 11
+			path: src/models/SettingsForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 8
+			path: src/models/SocialAccount.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\models\\\\SocialAccount has PHPDoc tag @property\\-read for property \\$decodedData with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/SocialAccount.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\SocialAccount\\:\\:getDecodedData\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/SocialAccount.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\SocialAccount\\:\\:getUser\\(\\) return type with generic class yii\\\\db\\\\ActiveQuery does not specify its types\\: T$#"
+			count: 1
+			path: src/models/SocialAccount.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 4
+			path: src/models/Token.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 7
+			path: src/models/Token.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\models\\\\Token has PHPDoc tag @property for property \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/Token.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\Token\\:\\:findByToken\\(\\) should return static\\(cgsmith\\\\user\\\\models\\\\Token\\)\\|null but returns cgsmith\\\\user\\\\models\\\\Token\\|null\\.$#"
+			count: 1
+			path: src/models/Token.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\Token\\:\\:getUser\\(\\) return type with generic class yii\\\\db\\\\ActiveQuery does not specify its types\\: T$#"
+			count: 1
+			path: src/models/Token.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\Token\\:\\:\\$created_at \\(string\\) does not accept yii\\\\db\\\\Expression\\.$#"
+			count: 1
+			path: src/models/Token.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\Token\\:\\:\\$data \\(array\\|null\\) does not accept string\\|false\\.$#"
+			count: 1
+			path: src/models/Token.php
+
+		-
+			message: "#^Unsafe usage of new static\\(\\)\\.$#"
+			count: 3
+			path: src/models/Token.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 7
+			path: src/models/TwoFactor.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\models\\\\TwoFactor has PHPDoc tag @property for property \\$backup_codes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/TwoFactor.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\TwoFactor\\:\\:getUser\\(\\) return type with generic class yii\\\\db\\\\ActiveQuery does not specify its types\\: T$#"
+			count: 1
+			path: src/models/TwoFactor.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\TwoFactor\\:\\:\\$backup_codes \\(array\\|null\\) does not accept string\\|false\\.$#"
+			count: 1
+			path: src/models/TwoFactor.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 2
+			path: src/models/TwoFactorForm.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 3
+			path: src/models/TwoFactorSetupForm.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 9
+			path: src/models/User.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 14
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\User\\:\\:afterSave\\(\\) has parameter \\$changedAttributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\User\\:\\:findByEmail\\(\\) should return static\\(cgsmith\\\\user\\\\models\\\\User\\)\\|null but returns cgsmith\\\\user\\\\models\\\\User\\|null\\.$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\User\\:\\:findByEmailOrUsername\\(\\) should return static\\(cgsmith\\\\user\\\\models\\\\User\\)\\|null but returns cgsmith\\\\user\\\\models\\\\User\\|null\\.$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\User\\:\\:findByUsername\\(\\) should return static\\(cgsmith\\\\user\\\\models\\\\User\\)\\|null but returns cgsmith\\\\user\\\\models\\\\User\\|null\\.$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\User\\:\\:findIdentity\\(\\) should return static\\(cgsmith\\\\user\\\\models\\\\User\\)\\|null but returns cgsmith\\\\user\\\\models\\\\User\\|null\\.$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\User\\:\\:getProfile\\(\\) return type with generic class yii\\\\db\\\\ActiveQuery does not specify its types\\: T$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\User\\:\\:getSessions\\(\\) return type with generic class yii\\\\db\\\\ActiveQuery does not specify its types\\: T$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\User\\:\\:getSocialAccounts\\(\\) return type with generic class yii\\\\db\\\\ActiveQuery does not specify its types\\: T$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\User\\:\\:getTokens\\(\\) return type with generic class yii\\\\db\\\\ActiveQuery does not specify its types\\: T$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\User\\:\\:getTwoFactor\\(\\) return type with generic class yii\\\\db\\\\ActiveQuery does not specify its types\\: T$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\User\\:\\:\\$blocked_at \\(string\\|null\\) does not accept yii\\\\db\\\\Expression\\.$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\User\\:\\:\\$email_confirmed_at \\(string\\|null\\) does not accept yii\\\\db\\\\Expression\\.$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\User\\:\\:\\$last_login_at \\(string\\|null\\) does not accept yii\\\\db\\\\Expression\\.$#"
+			count: 1
+			path: src/models/User.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\models\\\\UserSearch\\:\\:search\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/models/UserSearch.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\models\\\\query\\\\ProfileQuery extends generic class yii\\\\db\\\\ActiveQuery but does not specify its types\\: T$#"
+			count: 1
+			path: src/models/query/ProfileQuery.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\models\\\\query\\\\SessionQuery extends generic class yii\\\\db\\\\ActiveQuery but does not specify its types\\: T$#"
+			count: 1
+			path: src/models/query/SessionQuery.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\models\\\\query\\\\SocialAccountQuery extends generic class yii\\\\db\\\\ActiveQuery but does not specify its types\\: T$#"
+			count: 1
+			path: src/models/query/SocialAccountQuery.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\models\\\\query\\\\TokenQuery extends generic class yii\\\\db\\\\ActiveQuery but does not specify its types\\: T$#"
+			count: 1
+			path: src/models/query/TokenQuery.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\models\\\\query\\\\TwoFactorQuery extends generic class yii\\\\db\\\\ActiveQuery but does not specify its types\\: T$#"
+			count: 1
+			path: src/models/query/TwoFactorQuery.php
+
+		-
+			message: "#^Class cgsmith\\\\user\\\\models\\\\query\\\\UserQuery extends generic class yii\\\\db\\\\ActiveQuery but does not specify its types\\: T$#"
+			count: 1
+			path: src/models/query/UserQuery.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 4
+			path: src/services/CaptchaService.php
+
+		-
+			message: "#^Call to static method warning\\(\\) on an unknown class Yii\\.$#"
+			count: 4
+			path: src/services/CaptchaService.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\User\\:\\:\\$gdpr_consent_at \\(string\\|null\\) does not accept yii\\\\db\\\\Expression\\.$#"
+			count: 1
+			path: src/services/GdprService.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\User\\:\\:\\$gdpr_marketing_consent_at \\(string\\|null\\) does not accept yii\\\\db\\\\Expression\\.$#"
+			count: 2
+			path: src/services/GdprService.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 6
+			path: src/services/MailerService.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 5
+			path: src/services/MailerService.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\services\\\\MailerService\\:\\:sendMessage\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/services/MailerService.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/services/RbacService.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\services\\\\RbacService\\:\\:updateUserRoles\\(\\) has parameter \\$roleNames with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/services/RbacService.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/services/RecoveryService.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 2
+			path: src/services/RecoveryService.php
+
+		-
+			message: "#^Call to static method error\\(\\) on an unknown class Yii\\.$#"
+			count: 2
+			path: src/services/RecoveryService.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 2
+			path: src/services/RegistrationService.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 2
+			path: src/services/RegistrationService.php
+
+		-
+			message: "#^Call to static method error\\(\\) on an unknown class Yii\\.$#"
+			count: 4
+			path: src/services/RegistrationService.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 6
+			path: src/services/SessionService.php
+
+		-
+			message: "#^Call to static method error\\(\\) on an unknown class Yii\\.$#"
+			count: 1
+			path: src/services/SessionService.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\Session\\:\\:\\$created_at \\(string\\) does not accept yii\\\\db\\\\Expression\\.$#"
+			count: 1
+			path: src/services/SessionService.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\Session\\:\\:\\$last_activity_at \\(string\\) does not accept yii\\\\db\\\\Expression\\.$#"
+			count: 1
+			path: src/services/SessionService.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 10
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Call to method getId\\(\\) on an unknown class yii\\\\authclient\\\\ClientInterface\\.$#"
+			count: 3
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Call to method getUserAttributes\\(\\) on an unknown class yii\\\\authclient\\\\ClientInterface\\.$#"
+			count: 2
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Call to static method error\\(\\) on an unknown class Yii\\.$#"
+			count: 1
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\services\\\\SocialAuthService\\:\\:connect\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\services\\\\SocialAuthService\\:\\:getAuthClient\\(\\) has invalid return type yii\\\\authclient\\\\ClientInterface\\.$#"
+			count: 1
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\services\\\\SocialAuthService\\:\\:getAuthClients\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\services\\\\SocialAuthService\\:\\:register\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Parameter \\$client of method cgsmith\\\\user\\\\services\\\\SocialAuthService\\:\\:connect\\(\\) has invalid type yii\\\\authclient\\\\ClientInterface\\.$#"
+			count: 1
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Parameter \\$client of method cgsmith\\\\user\\\\services\\\\SocialAuthService\\:\\:handleCallback\\(\\) has invalid type yii\\\\authclient\\\\ClientInterface\\.$#"
+			count: 1
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Parameter \\$client of method cgsmith\\\\user\\\\services\\\\SocialAuthService\\:\\:login\\(\\) has invalid type yii\\\\authclient\\\\ClientInterface\\.$#"
+			count: 1
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Parameter \\$client of method cgsmith\\\\user\\\\services\\\\SocialAuthService\\:\\:register\\(\\) has invalid type yii\\\\authclient\\\\ClientInterface\\.$#"
+			count: 1
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\User\\:\\:\\$email_confirmed_at \\(string\\|null\\) does not accept yii\\\\db\\\\Expression\\|null\\.$#"
+			count: 1
+			path: src/services/SocialAuthService.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 8
+			path: src/services/TwoFactorService.php
+
+		-
+			message: "#^Call to method writeString\\(\\) on an unknown class BaconQrCode\\\\Writer\\.$#"
+			count: 1
+			path: src/services/TwoFactorService.php
+
+		-
+			message: "#^Instantiated class BaconQrCode\\\\Renderer\\\\Image\\\\SvgImageBackEnd not found\\.$#"
+			count: 1
+			path: src/services/TwoFactorService.php
+
+		-
+			message: "#^Instantiated class BaconQrCode\\\\Renderer\\\\RendererStyle\\\\RendererStyle not found\\.$#"
+			count: 1
+			path: src/services/TwoFactorService.php
+
+		-
+			message: "#^Instantiated class BaconQrCode\\\\Writer not found\\.$#"
+			count: 1
+			path: src/services/TwoFactorService.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\services\\\\TwoFactorService\\:\\:generateBackupCodes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/services/TwoFactorService.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\services\\\\TwoFactorService\\:\\:regenerateBackupCodes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/services/TwoFactorService.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\models\\\\TwoFactor\\:\\:\\$enabled_at \\(string\\|null\\) does not accept yii\\\\db\\\\Expression\\.$#"
+			count: 1
+			path: src/services/TwoFactorService.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 10
+			path: src/services/UserService.php
+
+		-
+			message: "#^Call to static method error\\(\\) on an unknown class Yii\\.$#"
+			count: 2
+			path: src/services/UserService.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 1
+			path: src/services/UserService.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\services\\\\UserService\\:\\:update\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/services/UserService.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/validators/HCaptchaValidator.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 1
+			path: src/validators/HCaptchaValidator.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 2
+			path: src/validators/HCaptchaValidator.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\validators\\\\HCaptchaValidator\\:\\:validateValue\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/validators/HCaptchaValidator.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 1
+			path: src/validators/ReCaptchaValidator.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 2
+			path: src/validators/ReCaptchaValidator.php
+
+		-
+			message: "#^Method cgsmith\\\\user\\\\validators\\\\ReCaptchaValidator\\:\\:validateValue\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/validators/ReCaptchaValidator.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/_alert.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/admin/_account.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/admin/_assignments.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 6
+			path: src/views/admin/_assignments.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 7
+			path: src/views/admin/_form.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 12
+			path: src/views/admin/_info.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 2
+			path: src/views/admin/_menu.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/admin/_profile.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/admin/create.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 2
+			path: src/views/admin/create.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 4
+			path: src/views/admin/index.php
+
+		-
+			message: "#^Anonymous function has an unused use \\$module\\.$#"
+			count: 1
+			path: src/views/admin/index.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 22
+			path: src/views/admin/index.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/admin/update.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 13
+			path: src/views/admin/update.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 8
+			path: src/views/gdpr/consent.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 11
+			path: src/views/gdpr/delete.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 8
+			path: src/views/gdpr/index.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 4
+			path: src/views/mail/confirmation-text.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 6
+			path: src/views/mail/confirmation.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/mail/generated_password-text.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 5
+			path: src/views/mail/generated_password-text.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/mail/generated_password.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 5
+			path: src/views/mail/generated_password.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 3
+			path: src/views/mail/layouts/html.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 4
+			path: src/views/mail/recovery-text.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 6
+			path: src/views/mail/recovery.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/mail/welcome-text.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 6
+			path: src/views/mail/welcome-text.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/mail/welcome.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 8
+			path: src/views/mail/welcome.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 9
+			path: src/views/rbac/index.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 8
+			path: src/views/rbac/permission-form.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/rbac/permissions.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 11
+			path: src/views/rbac/permissions.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 10
+			path: src/views/rbac/role-form.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/rbac/roles.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 11
+			path: src/views/rbac/roles.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 5
+			path: src/views/recovery/request.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 5
+			path: src/views/recovery/reset.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 4
+			path: src/views/registration/_gdpr_consent.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 7
+			path: src/views/registration/register.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 5
+			path: src/views/registration/resend.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 7
+			path: src/views/security/login.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 3
+			path: src/views/settings/_menu.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 3
+			path: src/views/settings/_menu.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 4
+			path: src/views/settings/account.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 7
+			path: src/views/settings/profile.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 2
+			path: src/views/settings/sessions.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 12
+			path: src/views/settings/sessions.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/views/social/networks.php
+
+		-
+			message: "#^Call to method getId\\(\\) on an unknown class yii\\\\authclient\\\\ClientInterface\\.$#"
+			count: 1
+			path: src/views/social/networks.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 10
+			path: src/views/social/networks.php
+
+		-
+			message: "#^Call to static method widget\\(\\) on an unknown class yii\\\\authclient\\\\widgets\\\\AuthChoice\\.$#"
+			count: 1
+			path: src/views/social/networks.php
+
+		-
+			message: "#^PHPDoc tag @var for variable \\$availableClients contains unknown class yii\\\\authclient\\\\ClientInterface\\.$#"
+			count: 1
+			path: src/views/social/networks.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 13
+			path: src/views/two-factor/backup-codes.php
+
+		-
+			message: "#^PHPDoc tag @var for variable \\$backupCodes has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/views/two-factor/backup-codes.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 16
+			path: src/views/two-factor/index.php
+
+		-
+			message: "#^Call to static method t\\(\\) on an unknown class Yii\\.$#"
+			count: 5
+			path: src/views/two-factor/verify.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 6
+			path: src/widgets/Captcha.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 2
+			path: src/widgets/Captcha.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\widgets\\\\Captcha\\:\\:\\$form has no type specified\\.$#"
+			count: 1
+			path: src/widgets/Captcha.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\widgets\\\\Captcha\\:\\:\\$model has no type specified\\.$#"
+			count: 1
+			path: src/widgets/Captcha.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/widgets/Login.php
+
+		-
+			message: "#^Access to static property \\$app on an unknown class Yii\\.$#"
+			count: 1
+			path: src/widgets/SocialConnect.php
+
+		-
+			message: "#^Access to static property \\$container on an unknown class Yii\\.$#"
+			count: 1
+			path: src/widgets/SocialConnect.php
+
+		-
+			message: "#^Call to static method widget\\(\\) on an unknown class yii\\\\authclient\\\\widgets\\\\AuthChoice\\.$#"
+			count: 1
+			path: src/widgets/SocialConnect.php
+
+		-
+			message: "#^Property cgsmith\\\\user\\\\widgets\\\\SocialConnect\\:\\:\\$options type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/widgets/SocialConnect.php

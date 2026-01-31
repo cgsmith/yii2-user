@@ -341,6 +341,7 @@ class Module extends BaseModule implements BootstrapInterface
         'RegistrationForm' => 'cgsmith\user\models\RegistrationForm',
         'RecoveryForm' => 'cgsmith\user\models\RecoveryForm',
         'RecoveryResetForm' => 'cgsmith\user\models\RecoveryResetForm',
+        'ResendForm' => 'cgsmith\user\models\ResendForm',
         'SettingsForm' => 'cgsmith\user\models\SettingsForm',
         'UserSearch' => 'cgsmith\user\models\UserSearch',
     ];

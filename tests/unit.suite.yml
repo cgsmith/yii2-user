@@ -3,4 +3,4 @@ modules:
     enabled:
         - Asserts
         - \tests\_support\Helper\Unit
-bootstrap: UnitBootstrap.php
+bootstrap: ../UnitBootstrap.php

@@ -39,7 +39,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "cgsmith\\user\\tests\\": "tests/"
+            "cgsmith\\user\\tests\\": "tests/",
+            "tests\\": "tests/"
         }
     },
     "extra": {

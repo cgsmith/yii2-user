@@ -130,24 +130,7 @@ class RegistrationController extends Controller
             throw new NotFoundHttpException();
         }
 
-        $model = new class extends \yii\base\Model {
-            public ?string $email = null;
-
-            public function rules(): array
-            {
-                return [
-                    ['email', 'required'],
-                    ['email', 'email'],
-                ];
-            }
-
-            public function attributeLabels(): array
-            {
-                return [
-                    'email' => Yii::t('user', 'Email'),
-                ];
-            }
-        };
+        $model = $module->createModel('ResendForm');
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $user = User::findByEmail($model->email);

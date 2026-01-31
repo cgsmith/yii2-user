@@ -12,8 +12,6 @@ parameters:
     treatPhpDocTypesAsCertain: false
     reportUnmatchedIgnoredErrors: false
 
-    yii2:
-        config_path: null
-
 includes:
+    - phpstan-baseline.neon
     - vendor/phpstan/phpstan/conf/bleedingEdge.neon

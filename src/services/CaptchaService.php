@@ -93,7 +93,7 @@ class CaptchaService
             $data['remoteip'] = Yii::$app->request->userIP;
         }
 
-        $ch = curl_init('https://hcaptcha.com/siteverify');
+        $ch = curl_init('https://api.hcaptcha.com/siteverify');
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
