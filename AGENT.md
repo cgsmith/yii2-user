@@ -78,7 +78,7 @@ php yii migrate-from-dektrium/migrate
 
 ## Testing
 - PHPUnit 10.0+ configured
-- PHPStan 1.10+ for static analysis
+- PHPStan 2.3+ for static analysis
 - Run tests: `./vendor/bin/phpunit`
 - Run static analysis: `./vendor/bin/phpstan analyse`
 

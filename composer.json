@@ -22,7 +22,8 @@
         "codeception/codeception": "^5.0",
         "codeception/module-asserts": "^3.0",
         "codeception/module-yii2": "^1.1",
-        "phpstan/phpstan": "^1.10",
+        "mspirkov/yii2-phpstan": "^0.19",
+        "phpstan/phpstan": "^2.3",
         "phpunit/phpunit": "^10.0"
     },
     "scripts": {

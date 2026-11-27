@@ -1,17 +1,49 @@
-parameters:
-    level: 6
-    paths:
-        - src
-    excludePaths:
-        - src/migrations
-
-    ignoreErrors:
-        - '#Call to an undefined method yii\\web\\IdentityInterface::#'
-        - '#Call to an undefined method yii\\base\\Component::get[A-Za-z]+\(\)#'
-
-    treatPhpDocTypesAsCertain: false
-    reportUnmatchedIgnoredErrors: false
-
 includes:
     - phpstan-baseline.neon
     - vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    - vendor/mspirkov/yii2-phpstan/extension.neon
+
+parameters:
+    level: 6
+    treatPhpDocTypesAsCertain: false
+    paths:
+        - src
+    bootstrapFiles:
+        - vendor/yiisoft/yii2/Yii.php
+
+    mspirkovYii2:
+        enableAllRules: false
+        enableValidationRules: true
+        aliases:
+            '@cgsmith/user': src
+        applicationConfigs:
+            -
+                paths:
+                    - src
+                files:
+                    - tools/phpstan/config.php
+        yiiAppTypes:
+            -
+                paths:
+                    - src/commands
+                type: yii\console\Application
+                nullable: false
+            -
+                paths:
+                    - src/components
+                    - src/controllers
+                    - src/filters
+                    - src/views
+                    - src/widgets
+                type: yii\web\Application<cgsmith\user\models\User>
+                nullable: false
+
+    ignoreErrors:
+        # TODO: remove these ignores after updating Yii2 to 2.0.56.
+        -
+            message: '#^Object option "(?:pagination|sort)" for yii\\data\\ActiveDataProvider must be #'
+            identifier: mspirkovYii2.baseObjectInstantiationValidation
+        -
+            message: '#^Parameter \#3 \$type of method yii\\db\\Migration::addColumn\(\) expects string, yii\\db\\ColumnSchemaBuilder given\.$#'
+            identifier: argument.type
+            path: src/migrations/*
